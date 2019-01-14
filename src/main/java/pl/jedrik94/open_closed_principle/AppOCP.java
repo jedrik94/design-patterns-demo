@@ -1,9 +1,6 @@
 package pl.jedrik94.open_closed_principle;
 
-import pl.jedrik94.open_closed_principle.model.Color;
-import pl.jedrik94.open_closed_principle.model.Product;
-import pl.jedrik94.open_closed_principle.model.ProductFilter;
-import pl.jedrik94.open_closed_principle.model.Size;
+import pl.jedrik94.open_closed_principle.model.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -20,7 +17,17 @@ public class AppOCP {
         ProductFilter productFilter = new ProductFilter();
 
         System.out.println("Blue products:");
-        productFilter.filterByColor(products, Color.BLUE)
+        productFilter.filter(products, new ColorSpecification(Color.BLUE))
                 .forEach(product -> System.out.println(" - " + product.getName()));
+
+        System.out.println("Large products:");
+        productFilter.filter(products, new SizeSpecification(Size.LARGE))
+                .forEach(product -> System.out.println(" - " + product.getName()));
+
+        System.out.println("Small & red products:");
+        productFilter.filter(products, new AndSpecification<>(
+                new ColorSpecification(Color.RED),
+                new SizeSpecification(Size.SMALL)
+        )).forEach(product -> System.out.println(" - " + product.getName()));
     }
 }
