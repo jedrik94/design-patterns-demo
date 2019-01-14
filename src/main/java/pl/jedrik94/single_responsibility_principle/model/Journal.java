@@ -1,7 +1,5 @@
 package pl.jedrik94.single_responsibility_principle.model;
 
-import java.io.FileNotFoundException;
-import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,12 +17,6 @@ public class Journal {
 
     public void removeEntry(int index) {
         entries.remove(index);
-    }
-
-    public void save(String filename) throws FileNotFoundException {
-        try (PrintStream printStream = new PrintStream(filename)) {
-            printStream.println(toString());
-        }
     }
 
     @Override
