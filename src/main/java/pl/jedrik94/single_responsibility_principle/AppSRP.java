@@ -3,7 +3,7 @@ package pl.jedrik94.single_responsibility_principle;
 import pl.jedrik94.single_responsibility_principle.model.Journal;
 import pl.jedrik94.single_responsibility_principle.model.Persistence;
 
-public class App {
+public class AppSRP {
     public static void main(String[] args) throws Exception {
         Journal journal = new Journal();
 
