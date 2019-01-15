@@ -1,5 +1,6 @@
 package pl.jedrik94.builder_pattern;
 
+import pl.jedrik94.builder_pattern.model.CodeBuilder;
 import pl.jedrik94.builder_pattern.model.Person;
 import pl.jedrik94.builder_pattern.model.PersonBuilder;
 
@@ -18,5 +19,8 @@ public class AppBuilder {
                 .build();
 
         System.out.println(person);
+
+        CodeBuilder codeBuilder = new CodeBuilder("Person").addField("name", "String").addField("age", "int");
+        System.out.println(codeBuilder);
     }
 }
