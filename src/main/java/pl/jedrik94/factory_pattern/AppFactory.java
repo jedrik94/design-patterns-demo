@@ -1,13 +1,13 @@
 package pl.jedrik94.factory_pattern;
 
-import pl.jedrik94.factory_pattern.model.Point;
+import pl.jedrik94.factory_pattern.model.HotDrink;
+import pl.jedrik94.factory_pattern.model.HotDrinkMachine;
 
 public class AppFactory {
-    public static void main(String[] args) {
-        Point dot1 = Point.Factory.newCartesianPoint(1, 0 );
-        Point dot2 = Point.Factory.newPolarPoint(1, 0);
+    public static void main(String[] args) throws Exception {
+        HotDrinkMachine machine = new HotDrinkMachine();
 
-        System.out.println(dot1);
-        System.out.println(dot2);
+        HotDrink drink = machine.makeDrink();
+        drink.consume();
     }
 }
