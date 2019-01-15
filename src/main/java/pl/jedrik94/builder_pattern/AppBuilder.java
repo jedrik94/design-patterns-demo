@@ -1,14 +1,16 @@
 package pl.jedrik94.builder_pattern;
 
-import pl.jedrik94.builder_pattern.model.HtmlBuilder;
+import pl.jedrik94.builder_pattern.model.Person;
+import pl.jedrik94.builder_pattern.model.PersonBuilder;
 
 public class AppBuilder {
     public static void main(String[] args) {
-        HtmlBuilder htmlBuilder = new HtmlBuilder("ul");
-        htmlBuilder.addChild("li", "car")
-                .addChild("li", "tree")
-                .addChild("li", "house");
+        PersonBuilder personBuilder = new PersonBuilder();
 
-        System.out.println(htmlBuilder.toString());
+        Person jedrzej = personBuilder
+                .withName("Jedrzej")
+                .build();
+
+        System.out.println(jedrzej);
     }
 }
