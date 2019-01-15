@@ -1,18 +1,14 @@
 package pl.jedrik94.builder_pattern;
 
+import pl.jedrik94.builder_pattern.model.HtmlBuilder;
+
 public class AppBuilder {
     public static void main(String[] args) {
-        String hello = "hello";
-        System.out.println("<p>" + hello + "</p>");
+        HtmlBuilder htmlBuilder = new HtmlBuilder("ul");
+        htmlBuilder.addChild("li", "car");
+        htmlBuilder.addChild("li", "tree");
+        htmlBuilder.addChild("li", "house");
 
-        String[] words = {"house", "tree", "cat"};
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("<ul>\n");
-        for (String word : words) {
-            stringBuilder.append(String.format("  <li>%s</li>\n", word));
-        }
-        stringBuilder.append("</ul>\n");
-
-        System.out.println(stringBuilder);
+        System.out.println(htmlBuilder.toString());
     }
 }
