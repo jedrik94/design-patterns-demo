@@ -1,23 +1,21 @@
 package pl.jedrik94.builder_pattern.model;
 
-public class PersonBuilder<SELF extends PersonBuilder<SELF>> {
+public class PersonBuilder {
     protected Person person;
 
     public PersonBuilder() {
-        person = new Person();
+        this.person = new Person();
     }
 
-    public SELF withName(String name) {
-        person.setName(name);
+    public PersonAddressBuilder lives() {
+        return new PersonAddressBuilder(person);
+    }
 
-        return self();
+    public PersonJobBuilder works() {
+        return new PersonJobBuilder(person);
     }
 
     public Person build() {
         return person;
-    }
-
-    protected SELF self() {
-        return (SELF) this;
     }
 }
