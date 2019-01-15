@@ -9,7 +9,7 @@ public class AppBuilder {
 
         Person jedrzej = personBuilder
                 .withName("Jedrzej")
-//              .worksAs("software engineer")
+                .worksAs("software engineer")
                 .build();
 
         System.out.println(jedrzej);
