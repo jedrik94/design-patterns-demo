@@ -1,6 +1,8 @@
 package pl.jedrik94.prototype_pattern.model;
 
-public class Address {
+import java.io.Serializable;
+
+public class Address implements Serializable {
     private String streetName, city, country;
 
     public Address(String streetName, String city, String country) {

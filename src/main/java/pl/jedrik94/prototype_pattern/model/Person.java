@@ -1,6 +1,8 @@
 package pl.jedrik94.prototype_pattern.model;
 
-public class Person {
+import java.io.Serializable;
+
+public class Person implements Serializable {
     private String name;
     private Address address;
 
