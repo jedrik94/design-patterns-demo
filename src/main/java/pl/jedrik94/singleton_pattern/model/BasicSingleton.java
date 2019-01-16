@@ -1,6 +1,8 @@
 package pl.jedrik94.singleton_pattern.model;
 
-public class BasicSingleton {
+import java.io.Serializable;
+
+public class BasicSingleton implements Serializable {
     private int value;
 
     private BasicSingleton() {
