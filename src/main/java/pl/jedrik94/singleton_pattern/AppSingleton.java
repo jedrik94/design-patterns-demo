@@ -21,6 +21,6 @@ public class AppSingleton {
     }
 
     public static void main(String[] args) throws Exception {
-        StaticBlockSingleton singleton = StaticBlockSingleton.getInstance();
+
     }
 }
