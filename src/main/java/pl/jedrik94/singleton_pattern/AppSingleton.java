@@ -22,10 +22,6 @@ public class AppSingleton {
     public static void main(String[] args) throws Exception {
         String filename = "C:\\temp\\enumBasedSingleton.bin";
 
-        EnumBasedSingleton singleton1 = EnumBasedSingleton.INSTANCE;
-        singleton1.setValue(123);
-        saveToFile(singleton1, filename);
-
         EnumBasedSingleton singleton2 = readFromFile(filename);
         System.out.println(singleton2.getValue());
     }
