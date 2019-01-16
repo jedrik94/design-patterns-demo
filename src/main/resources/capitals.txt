@@ -1,0 +1,6 @@
+Warsaw
+1000
+Poznan
+1999
+Wroclaw
+1001
