@@ -1,6 +1,7 @@
 package pl.jedrik94.singleton_pattern;
 
 import pl.jedrik94.singleton_pattern.model.BasicSingleton;
+import pl.jedrik94.singleton_pattern.model.StaticBlockSingleton;
 
 import java.io.*;
 
@@ -20,20 +21,6 @@ public class AppSingleton {
     }
 
     public static void main(String[] args) throws Exception {
-        BasicSingleton singleton1 = BasicSingleton.getInstance();
-        singleton1.setValue(123);
-
-        String filename = "C:\\temp\\basicSingleton.bin";
-
-        saveToFile(singleton1, filename);
-
-        singleton1.setValue(321);
-
-        BasicSingleton singleton2 = readFromFile(filename);
-
-        System.out.println(singleton1.equals(singleton2));
-
-        System.out.println(singleton1);
-        System.out.println(singleton2);
+        StaticBlockSingleton singleton = StaticBlockSingleton.getInstance();
     }
 }
