@@ -28,4 +28,8 @@ public class BasicSingleton implements Serializable {
                 "value=" + value +
                 '}';
     }
+
+    protected Object readResolve() {
+        return INSTANCE;
+    }
 }

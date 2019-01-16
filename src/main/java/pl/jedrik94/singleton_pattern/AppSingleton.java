@@ -31,7 +31,7 @@ public class AppSingleton {
 
         BasicSingleton singleton2 = readFromFile(filename);
 
-        System.out.println(singleton1 == singleton2);
+        System.out.println(singleton1.equals(singleton2));
 
         System.out.println(singleton1);
         System.out.println(singleton2);
