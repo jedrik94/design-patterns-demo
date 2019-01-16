@@ -1,28 +1,17 @@
 package pl.jedrik94.singleton_pattern;
 
-import pl.jedrik94.singleton_pattern.model.EnumBasedSingleton;
-
-import java.io.*;
+import pl.jedrik94.singleton_pattern.model.Monostate;
 
 public class AppSingleton {
-    static void saveToFile(EnumBasedSingleton enumBasedSingleton, String filename) throws IOException {
-        try (FileOutputStream fileOutputStream = new FileOutputStream(filename);
-             ObjectOutputStream out = new ObjectOutputStream(fileOutputStream)) {
-            out.writeObject(enumBasedSingleton);
-        }
-    }
 
-    static EnumBasedSingleton readFromFile(String filename) throws IOException, ClassNotFoundException {
-        try (FileInputStream fileInputStream = new FileInputStream(filename);
-             ObjectInputStream in = new ObjectInputStream(fileInputStream)) {
-            return (EnumBasedSingleton) in.readObject();
-        }
-    }
+    public static void main(String[] args) {
+        Monostate monostate1 = new Monostate();
+        monostate1.setName("monostate");
+        monostate1.setDescription("outdated");
 
-    public static void main(String[] args) throws Exception {
-        String filename = "C:\\temp\\enumBasedSingleton.bin";
+        System.out.println(monostate1);
 
-        EnumBasedSingleton singleton2 = readFromFile(filename);
-        System.out.println(singleton2.getValue());
+        Monostate monostate2 = new Monostate();
+        System.out.println(monostate2);
     }
 }
