@@ -2,6 +2,7 @@ package pl.jedrik94.singleton_pattern.model;
 
 import com.google.common.collect.Iterables;
 
+import javax.xml.crypto.Data;
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,7 +11,7 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.List;
 
-public class SingletonDatabase {
+public class SingletonDatabase implements Database {
     public static int instanceCount = 0;
     private static Dictionary<String, Integer> cities = new Hashtable<>();
 
