@@ -1,27 +1,18 @@
 package pl.jedrik94.composite_pattern;
 
-import pl.jedrik94.composite_pattern.model.Circle;
-import pl.jedrik94.composite_pattern.model.GraphicObject;
-import pl.jedrik94.composite_pattern.model.Square;
-
-import java.util.Arrays;
+import pl.jedrik94.composite_pattern.model.Neuron;
+import pl.jedrik94.composite_pattern.model.NeuronLayer;
 
 public class AppComposite {
     public static void main(String[] args) {
-        GraphicObject drawing = new GraphicObject();
-        drawing.setName("My Drawing");
-        drawing.addChild(new Square("Red"));
-        drawing.addChild(new Circle("Blue"));
+        Neuron neuron1 = new Neuron();
+        Neuron neuron2 = new Neuron();
+        NeuronLayer neuronLayer1 = new NeuronLayer();
+        NeuronLayer neuronLayer2 = new NeuronLayer();
 
-        GraphicObject group1 = new GraphicObject();
-        group1.addChildren(Arrays.asList(new Circle("Green"), new Square("Black")));
-
-        GraphicObject group2 = new GraphicObject();
-        group2.addChildren(Arrays.asList(new Circle("Yellow"), new Square("White")));
-
-        drawing.addChild(group1);
-        drawing.addChild(group2);
-
-        System.out.println(drawing);
+        neuron1.connectTo(neuron2);
+        neuron1.connectTo(neuronLayer1);
+        neuronLayer1.connectTo(neuron2);
+        neuronLayer2.connectTo(neuronLayer1);
     }
 }
