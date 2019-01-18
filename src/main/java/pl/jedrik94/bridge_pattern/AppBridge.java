@@ -1,19 +1,19 @@
 package pl.jedrik94.bridge_pattern;
 
-import pl.jedrik94.bridge_pattern.model.Circle;
-import pl.jedrik94.bridge_pattern.model.RasterRenderer;
-import pl.jedrik94.bridge_pattern.model.Renderer;
-import pl.jedrik94.bridge_pattern.model.VectorRenderer;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import pl.jedrik94.bridge_pattern.model.*;
 
 public class AppBridge {
     public static void main(String[] args) {
-        Renderer vector = new VectorRenderer();
-        RasterRenderer raster = new RasterRenderer();
+        Injector injector = Guice.createInjector(new ShapeModule());
 
-        Circle circle = new Circle(vector, 5);
+        Circle circle = injector.getInstance(Circle.class);
+
+        circle.setRadius(5);
 
         circle.draw();
-        circle.resize(3);
+        circle.resize(2);
         circle.draw();
     }
 }
