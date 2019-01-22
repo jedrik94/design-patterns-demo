@@ -1,13 +1,13 @@
 package pl.jedrik94.flyweight_pattern;
 
-import pl.jedrik94.flyweight_pattern.model.User;
+import pl.jedrik94.flyweight_pattern.model.FormattedText;
+
 
 public class AppFlyweight {
     public static void main(String[] args) {
-        User user1 = new User("Jedrzej Wojtkowiak");
-        User user2 = new User("Andrzej Wojtkowiak");
-        User user3 = new User("Jedrzej Stachowski");
+        FormattedText formattedText = new FormattedText("OldSchool Items are fantastic and cool.");
+        formattedText.capitalize(20, 29);
 
-        System.out.println(user1.getFullName() + "; " + user2.getFullName() + "; " + user3.getFullName());
+        System.out.println(formattedText);
     }
 }
