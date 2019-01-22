@@ -1,6 +1,6 @@
 package pl.jedrik94.facade_pattern.model;
 
-public class Viewport {
+class Viewport {
     private Buffer buffer;
     private int width;
     private int height;

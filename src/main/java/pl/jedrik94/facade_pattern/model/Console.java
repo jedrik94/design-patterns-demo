@@ -7,13 +7,23 @@ public class Console {
     private List<Viewport> viewports;
     private int width, height;
 
-    public Console(int width, int height) {
+    private Console(int width, int height) {
         viewports = new ArrayList<>();
         this.width = width;
         this.height = height;
     }
 
-    public void addViewport(Viewport viewport) {
+    public static Console newConsole(int width, int height) {
+        Buffer buffer = new Buffer(width, height);
+        Viewport viewport = new Viewport(buffer, width, height, 0 , 0);
+        Console console = new Console(width, height);
+
+        console.addViewport(viewport);
+
+        return console;
+    }
+
+    private void addViewport(Viewport viewport) {
         viewports.add(viewport);
     }
 

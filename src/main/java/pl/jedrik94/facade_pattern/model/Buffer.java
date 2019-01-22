@@ -1,6 +1,6 @@
 package pl.jedrik94.facade_pattern.model;
 
-public class Buffer {
+class Buffer {
     private char[] characters;
     private int lineWidth;
 
