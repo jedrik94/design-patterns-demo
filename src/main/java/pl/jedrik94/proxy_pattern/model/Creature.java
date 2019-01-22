@@ -1,4 +1,4 @@
-package pl.jedrik94.proxy_patterm.model;
+package pl.jedrik94.proxy_pattern.model;
 
 public class Creature {
     private Property<Integer> agility;

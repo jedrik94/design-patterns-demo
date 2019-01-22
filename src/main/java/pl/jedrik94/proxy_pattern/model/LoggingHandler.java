@@ -1,4 +1,4 @@
-package pl.jedrik94.proxy_patterm.model;
+package pl.jedrik94.proxy_pattern.model;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

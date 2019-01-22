@@ -1,8 +1,8 @@
-package pl.jedrik94.proxy_patterm;
+package pl.jedrik94.proxy_pattern;
 
-import pl.jedrik94.proxy_patterm.model.Human;
-import pl.jedrik94.proxy_patterm.model.LoggingHandler;
-import pl.jedrik94.proxy_patterm.model.Person;
+import pl.jedrik94.proxy_pattern.model.Human;
+import pl.jedrik94.proxy_pattern.model.LoggingHandler;
+import pl.jedrik94.proxy_pattern.model.Person;
 
 import java.lang.reflect.Proxy;
 
