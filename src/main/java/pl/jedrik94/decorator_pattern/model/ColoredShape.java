@@ -1,12 +1,14 @@
 package pl.jedrik94.decorator_pattern.model;
 
-public class ColoredShape implements Shape {
+import java.util.function.Supplier;
+
+public class ColoredShape<T extends Shape> implements Shape {
     private final String color;
     private final Shape shape;
 
-    public ColoredShape(Shape shape, String color) {
+    public ColoredShape(Supplier<T> supplier, String color) {
         this.color = color;
-        this.shape = shape;
+        this.shape = supplier.get();
     }
 
     public String getColor() {

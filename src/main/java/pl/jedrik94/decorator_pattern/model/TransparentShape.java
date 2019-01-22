@@ -1,11 +1,13 @@
 package pl.jedrik94.decorator_pattern.model;
 
-public class TransparentShape implements Shape {
+import java.util.function.Supplier;
+
+public class TransparentShape<T extends Shape> implements Shape {
     private final int transparency;
     private final Shape shape;
 
-    public TransparentShape(Shape shape, int transparency) {
-        this.shape = shape;
+    public TransparentShape(Supplier<T> supplier, int transparency) {
+        this.shape = supplier.get();
         this.transparency = transparency;
     }
 
