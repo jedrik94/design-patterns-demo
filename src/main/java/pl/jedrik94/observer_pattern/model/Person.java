@@ -1,6 +1,9 @@
 package pl.jedrik94.observer_pattern.model;
 
-public class Person extends Observable<Person> {
+public class Person {
+    public Event<PropertyChangedEventArgs> propertyChanged =
+            new Event<>();
+
     private int age;
 
     public int getAge() {
@@ -12,7 +15,9 @@ public class Person extends Observable<Person> {
             return;
         } else {
             this.age = age;
-            propertyChanged(this, "age", age);
+            propertyChanged.fire(new PropertyChangedEventArgs(
+                    this, "age"
+            ));
         }
     }
 }
